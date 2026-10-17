@@ -1,8 +1,8 @@
 name: build-and-deploy
 on:
-  push: {branches: [main]}
+  # Gatilhos push/schedule desativados ate o repo ficar privado (pedido do Joao).
+  # Reativar: push: {branches: [main]} e schedule: [{cron: "0 9,21 * * *"}]
   workflow_dispatch: {}
-  schedule: [{cron: "0 9,21 * * *"}]
 permissions: {contents: read, pages: write, id-token: write}
 concurrency: {group: pages, cancel-in-progress: true}
 jobs:
